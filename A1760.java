@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class A1760 {
@@ -22,10 +19,26 @@ public class A1760 {
     }
 
     private static int findTheMedium(int a, int b, int c) {
-        ArrayList<Integer> array = new ArrayList<>();
-        array.addAll(Arrays.asList(a, b, c));
-        Collections.sort(array);
+       if (a < b && a < c) {
+            if ( b < c) {
+                return b;
+            }else{
+                return c;
+            }
+       }else if (b < a && b < c) {
+            if (a < c) {
+                return a;
+            }else{
+                return c;
+            }
+       }else if (c < a && c < b) {
+            if (a < b) {
+                return a;
+            }else{
+                return b;
+            }
+       }
 
-        return array.get(1);
+       return 0;
     }
 }
