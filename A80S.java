@@ -22,7 +22,7 @@ public class A80S {
         //now find the next prime number to validate the prime number;
         int nextOfPrime = -1;
         for (int i = primeNumber+1; i < 50; i++) {
-            if (nextPrime(i)) {
+            if (isPrime(i)) {
                 nextOfPrime = i;
                 break;
             }
@@ -35,16 +35,6 @@ public class A80S {
 
     
     public static boolean isPrime(int i){
-        for (int j = 2; j <= i/2; j++) {
-            if (i%j==0) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public static boolean nextPrime(int i){
         for (int j = 2; j <= i/2; j++) {
             if (i%j==0) {
                 return false;
