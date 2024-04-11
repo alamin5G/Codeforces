@@ -1,48 +1,41 @@
 import java.util.Scanner;
-import java.util.Stack;
 
-class B1722{
+class B1722 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int t = input.nextInt();
-        while (t!=0) {
-            int a = input.nextInt();
-            Stack<Character> firstRow = new Stack<>();
-            Stack<Character> secondRow = new Stack<>();
-            for (int i = 0; i < 1; i++) {
-                String s = input.nextLine();
-                for (int j = 0; j < a; j++) {
-                    if (i==0) {
-                        
-                    }else{
-                        secondRow.push(c);
-                    }
-                }
-            }
+        while (t != 0) {
             
+            int a = input.nextInt();
+            input.nextLine();
+
+            String r1 = input.nextLine();
+            String r2 = input.nextLine();
             boolean flag = false;
 
-            for (int i = 0; i < a; i++) {
-                if ((firstRow.pop() == 'B' && secondRow.pop() == 'G') || (firstRow.pop() == 'G' && secondRow.pop() == 'B' )) {
+            for (int j = 0; j < a; j++) {
+                if(r1.charAt(j) == r2.charAt(j)){
                     flag = true;
-                }else if(firstRow.pop() != secondRow.pop()){
+                }else if(r1.charAt(j) == 'B' && r2.charAt(j) == 'G') {
+                    flag = true;
+                }else if(r1.charAt(j) == 'G' && r2.charAt(j) == 'B') {
+                    flag = true;
+                }else{
                     flag = false;
                     break;
-                }else{
-                    flag = true;
                 }
             }
+
 
             if (flag) {
                 System.out.println("YES");
-            }else{
+            } else {
                 System.out.println("NO");
             }
 
             t--;
         }
     }
-    
 
 }
