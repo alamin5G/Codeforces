@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-class B1722 {
+public class B1722 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int t = input.nextInt();
         while (t != 0) {
-            
+
             int a = input.nextInt();
             input.nextLine();
 
